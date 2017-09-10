@@ -305,12 +305,15 @@
       
         
           
-            <p>##总结：</p>
-<p>###github上文件目录必须是：[账号名].github.io，否则hexo部署后，index页面写好的文件路径引用无法匹配</p>
-<p>###根目录下的_config.yml文件，最下面的配置项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:teamdevelop/teamdevelop.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+            <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="github上文件目录必须是：-账号名-github-io，否则hexo部署后，index页面写好的文件路径引用无法匹配"><a href="#github上文件目录必须是：-账号名-github-io，否则hexo部署后，index页面写好的文件路径引用无法匹配" class="headerlink" title="github上文件目录必须是：[账号名].github.io，否则hexo部署后，index页面写好的文件路径引用无法匹配"></a>github上文件目录必须是：[账号名].github.io，否则hexo部署后，index页面写好的文件路径引用无法匹配</h3><h3 id="根目录下的-config-yml文件，最下面的配置项："><a href="#根目录下的-config-yml文件，最下面的配置项：" class="headerlink" title="根目录下的_config.yml文件，最下面的配置项："></a>根目录下的_config.yml文件，最下面的配置项：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:teamdevelop/teamdevelop.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <p>如果不喜欢repository的配置格式可以下载hexo的插件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>然后配置可以写成：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: https://github.com/teamdevelop/teamdevelop.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
-<p>###添加文件后貌似部署不上去？</p>
+<h2 id="添加文件后貌似部署不上去？"><a href="#添加文件后貌似部署不上去？" class="headerlink" title="添加文件后貌似部署不上去？"></a>添加文件后貌似部署不上去？</h2><h3 id="因为新建静态文件报错"><a href="#因为新建静态文件报错" class="headerlink" title="因为新建静态文件报错"></a>因为新建静态文件报错</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ERROR Process failed: _posts/learn-log.md</div><div class="line">YAMLException: can not <span class="built_in">read</span> a block mapping entry; a multiline key may not be an implicit key at line 4, column 1</div></pre></td></tr></table></figure>
+<p>原因是因为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">title: 前端学习日志</div><div class="line">date: 2017-09-07 23:44:40</div><div class="line">tags:github的个人博客搭建</div></pre></td></tr></table></figure></p>
+<p>tags后面的’github的个人博客搭建’在’:’前必须有空格隔开，加个空格即可</p>
+<ul>
+<li>使用md文档记得在md符号后面加个空格，否则后面的文字无法被识别为md标记的样式</li>
+</ul>
 
           
         

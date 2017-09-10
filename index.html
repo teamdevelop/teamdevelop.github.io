@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -263,7 +263,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-07T23:44:40+08:00">
                 2017-09-07
@@ -305,15 +305,15 @@
       
         
           
-            <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><h3 id="github上文件目录必须是：-账号名-github-io，否则hexo部署后，index页面写好的文件路径引用无法匹配"><a href="#github上文件目录必须是：-账号名-github-io，否则hexo部署后，index页面写好的文件路径引用无法匹配" class="headerlink" title="github上文件目录必须是：[账号名].github.io，否则hexo部署后，index页面写好的文件路径引用无法匹配"></a>github上文件目录必须是：[账号名].github.io，否则hexo部署后，index页面写好的文件路径引用无法匹配</h3><h3 id="根目录下的-config-yml文件，最下面的配置项："><a href="#根目录下的-config-yml文件，最下面的配置项：" class="headerlink" title="根目录下的_config.yml文件，最下面的配置项："></a>根目录下的_config.yml文件，最下面的配置项：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:teamdevelop/teamdevelop.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+            <h2 id="遇到的坑："><a href="#遇到的坑：" class="headerlink" title="遇到的坑："></a>遇到的坑：</h2><h3 id="github上文件目录必须是：-账号名-github-io，否则hexo部署后，index页面写好的文件路径引用无法匹配"><a href="#github上文件目录必须是：-账号名-github-io，否则hexo部署后，index页面写好的文件路径引用无法匹配" class="headerlink" title="github上文件目录必须是：[账号名].github.io，否则hexo部署后，index页面写好的文件路径引用无法匹配"></a>github上文件目录必须是：[账号名].github.io，否则hexo部署后，index页面写好的文件路径引用无法匹配</h3><h3 id="根目录下的-config-yml文件，最下面的配置项："><a href="#根目录下的-config-yml文件，最下面的配置项：" class="headerlink" title="根目录下的_config.yml文件，最下面的配置项："></a>根目录下的_config.yml文件，最下面的配置项：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:teamdevelop/teamdevelop.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <p>如果不喜欢repository的配置格式可以下载hexo的插件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>然后配置可以写成：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: https://github.com/teamdevelop/teamdevelop.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
-<h2 id="添加文件后貌似部署不上去？"><a href="#添加文件后貌似部署不上去？" class="headerlink" title="添加文件后貌似部署不上去？"></a>添加文件后貌似部署不上去？</h2><h3 id="因为新建静态文件报错"><a href="#因为新建静态文件报错" class="headerlink" title="因为新建静态文件报错"></a>因为新建静态文件报错</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ERROR Process failed: _posts/learn-log.md</div><div class="line">YAMLException: can not <span class="built_in">read</span> a block mapping entry; a multiline key may not be an implicit key at line 4, column 1</div></pre></td></tr></table></figure>
+<h3 id="添加文件后貌似部署不上去？"><a href="#添加文件后貌似部署不上去？" class="headerlink" title="添加文件后貌似部署不上去？"></a>添加文件后貌似部署不上去？</h3><p>因为新建静态文件报错<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ERROR Process failed: _posts/learn-log.md</div><div class="line">YAMLException: can not <span class="built_in">read</span> a block mapping entry; a multiline key may not be an implicit key at line 4, column 1</div></pre></td></tr></table></figure></p>
 <p>原因是因为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">title: 前端学习日志</div><div class="line">date: 2017-09-07 23:44:40</div><div class="line">tags:github的个人博客搭建</div></pre></td></tr></table></figure></p>
 <p>tags后面的’github的个人博客搭建’在’:’前必须有空格隔开，加个空格即可</p>
-<ul>
-<li>使用md文档记得在md符号后面加个空格，否则后面的文字无法被识别为md标记的样式</li>
-</ul>
+<h3 id="使用md文档记得在md符号后面加个空格，否则后面的文字无法被识别为md标记的样式"><a href="#使用md文档记得在md符号后面加个空格，否则后面的文字无法被识别为md标记的样式" class="headerlink" title="使用md文档记得在md符号后面加个空格，否则后面的文字无法被识别为md标记的样式"></a>使用md文档记得在md符号后面加个空格，否则后面的文字无法被识别为md标记的样式</h3><h3 id="每次变更博客内容之后记得先重建再部署"><a href="#每次变更博客内容之后记得先重建再部署" class="headerlink" title="每次变更博客内容之后记得先重建再部署"></a>每次变更博客内容之后记得先重建再部署</h3><blockquote>
+<p>hexo g<br>hexo d</p>
+</blockquote>
 
           
         
@@ -391,7 +391,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-06T23:33:35+08:00">
                 2017-09-06
@@ -523,7 +523,7 @@
               <a href="/archives">
             
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -536,7 +536,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -587,7 +587,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 

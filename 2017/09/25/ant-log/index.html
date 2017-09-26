@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/25/ant-log/index.html">
 <meta property="og:site_name" content="CYC&#39;s Blog">
 <meta property="og:description" content="##遇到的坑 启动webpack后，使用了ant的form控件，页面空白，在console里面提示1getFieldDecorator is not defined 原因在于render函数下没有声明getFieldDecorator方法，因此声明为：1234567render() &amp;#123;		let &amp;#123;getFieldDecorator&amp;#125; = this.props.for">
-<meta property="og:updated_time" content="2017-09-25T15:55:09.427Z">
+<meta property="og:updated_time" content="2017-09-26T14:08:40.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ant log">
 <meta name="twitter:description" content="##遇到的坑 启动webpack后，使用了ant的form控件，页面空白，在console里面提示1getFieldDecorator is not defined 原因在于render函数下没有声明getFieldDecorator方法，因此声明为：1234567render() &amp;#123;		let &amp;#123;getFieldDecorator&amp;#125; = this.props.for">
@@ -307,7 +307,7 @@
       
         <p>##遇到的坑</p>
 <p>启动webpack后，使用了ant的form控件，页面空白，在console里面提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getFieldDecorator is not defined</div></pre></td></tr></table></figure></p>
-<p>原因在于render函数下没有声明getFieldDecorator方法，因此声明为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">		let &#123;getFieldDecorator&#125; = this.props.form;</div><div class="line">        return (</div><div class="line">            &lt;Form&gt;</div><div class="line">                ...</div><div class="line">            &lt;/Form&gt;</div><div class="line">        )&#125;</div></pre></td></tr></table></figure></p>
+<p>原因在于render函数下没有声明getFieldDecorator方法，因此声明为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">		let &#123;getFieldDecorator&#125; = this.props.form;  **就是这句，非常重要**</div><div class="line">        return (</div><div class="line">            &lt;Form&gt;</div><div class="line">                ...</div><div class="line">            &lt;/Form&gt;</div><div class="line">        )&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
